@@ -1,12 +1,14 @@
 package SKIP_API;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.util.Set;
 
@@ -26,6 +28,7 @@ public class SKIP_30 {
     // Authorization parameters:
     String login = "authorization_test";
     String password = "crjhjcnm";
+
     @BeforeTest
     void setup() {
         // Get chromedriver actual version and setup it
@@ -89,7 +92,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step02(){
+    public void step02() {
         // open new window (tab)
         js.executeScript("window.open()");
         // get intel about all window handles
@@ -117,7 +120,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step03(){
+    public void step03() {
         js.executeScript("window.open()");
         Set<String> allWindowHandles = driver.getWindowHandles();
         // Loop through each window handle and switch to the new tab
@@ -168,7 +171,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step04(){
+    public void step04() {
         driver.switchTo().window(secondTabHandle);
         driver.get(authorizationCheck);
         // Wait 1 sec
@@ -185,7 +188,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step05(){
+    public void step05() {
         driver.switchTo().window(thirdTabHandle);
         driver.get(logOut);
         // Wait 20 sec
@@ -203,7 +206,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step06(){
+    public void step06() {
         js.executeScript("window.open()");
         Set<String> allWindowHandles = driver.getWindowHandles();
         // Loop through each window handle and switch to the new tab
@@ -245,7 +248,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step07(){
+    public void step07() {
         driver.switchTo().window(secondTabHandle);
         driver.get(authorizationCheck);
         try {
@@ -261,7 +264,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step08(){
+    public void step08() {
         driver.switchTo().window(firstTabHandle);
         driver.get(sudisAuthorization);
         try {
@@ -277,7 +280,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step09(){
+    public void step09() {
         driver.switchTo().window(thirdTabHandle);
         driver.get(logOut);
         try {
@@ -294,7 +297,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step10(){
+    public void step10() {
         driver.switchTo().window(firstTabHandle);
         driver.get(sudisAuthorization);
         try {
@@ -327,7 +330,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step11(){
+    public void step11() {
         driver.switchTo().window(secondTabHandle);
         driver.get(authorizationCheck);
         try {
@@ -343,7 +346,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step12(){
+    public void step12() {
         driver.switchTo().window(thirdTabHandle);
         driver.get(withoutSudisAuthorization);
         try {
@@ -359,7 +362,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step13(){
+    public void step13() {
         driver.switchTo().window(secondTabHandle);
         driver.get(authorizationCheck);
         try {
@@ -375,7 +378,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step14(){
+    public void step14() {
         driver.switchTo().window(thirdTabHandle);
         driver.get(logOut);
         try {
@@ -397,7 +400,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step15(){
+    public void step15() {
         driver.switchTo().window(secondTabHandle);
         driver.get(authorizationCheck);
         try {
@@ -414,7 +417,7 @@ public class SKIP_30 {
     }
 
     @Test
-    public void step16(){
+    public void step16() {
         driver.switchTo().window(firstTabHandle);
         driver.get(sudisAuthorization);
         try {
